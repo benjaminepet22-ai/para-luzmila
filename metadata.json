@@ -1,0 +1,6 @@
+{
+  "name": "Flores Amarillas para Luzmila",
+  "description": "Tarjeta y detalle digital de flores amarillas para Luzmila por el 21 de septiembre, inicio de la primavera.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
