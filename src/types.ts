@@ -6,10 +6,3 @@ export interface FloralCard {
   imageUrl: string;
   description: string;
 }
-
-export interface DedicationNote {
-  recipient: string;
-  sender: string;
-  message: string;
-  date: string;
-}

@@ -14,7 +14,6 @@ import {
 import { motion } from 'motion/react';
 import { PetalCanvas } from './components/PetalCanvas';
 import { ImageLightbox } from './components/ImageLightbox';
-import { DedicationCard } from './components/DedicationCard';
 import { playSpringChime } from './utils/audio';
 import { FloralCard } from './types';
 
@@ -159,10 +158,10 @@ export default function App() {
             Detalle floral exclusivo para Luzmila
           </span>
           <h2 className="font-serif-display text-2xl sm:text-3xl md:text-4xl text-stone-900 font-bold tracking-tight">
-            Un Ramo de Luz y Primavera
+            Flores Amarillas para Luzmila
           </h2>
-          <p className="font-calligraphy text-xl sm:text-2xl md:text-3xl text-amber-700 mt-2 max-w-2xl mx-auto px-4 leading-relaxed">
-            "Sé que es una boludez pero no me aguanté las ganas, te lo hice con mucho cariño porque sos una persona especial para mí"
+          <p className="text-sm sm:text-base font-sans-clean text-stone-600 mt-1">
+            21 de Septiembre • Inicio de la Primavera
           </p>
         </div>
 
@@ -285,12 +284,6 @@ export default function App() {
             </div>
           </div>
         </div>
-
-        {/* Personalized Dedication Letter / Card */}
-        <DedicationCard
-          recipientName="Luzmila"
-          initialMessage={GREETING_TEXT}
-        />
       </main>
 
       {/* Lightbox Modal */}
