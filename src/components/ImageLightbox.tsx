@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X, ZoomIn, ZoomOut, Download, Sparkles } from 'lucide-react';
+import { X, ZoomIn, ZoomOut, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface ImageLightboxProps {
@@ -7,7 +7,6 @@ interface ImageLightboxProps {
   onClose: () => void;
   imageUrl: string;
   title: string;
-  onDownload: () => void;
 }
 
 export function ImageLightbox({
@@ -15,7 +14,6 @@ export function ImageLightbox({
   onClose,
   imageUrl,
   title,
-  onDownload,
 }: ImageLightboxProps) {
   const [scale, setScale] = useState(1);
 
@@ -70,14 +68,6 @@ export function ImageLightbox({
                 className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
               >
                 <ZoomIn className="w-4 h-4" />
-              </button>
-              <button
-                id="lightbox-download-btn"
-                onClick={onDownload}
-                title="Descargar imagen"
-                className="p-2 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-900 transition-colors ml-2 cursor-pointer font-medium"
-              >
-                <Download className="w-4 h-4" />
               </button>
               <button
                 id="lightbox-close-btn"

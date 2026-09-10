@@ -16,7 +16,7 @@ export function DedicationCard({
   const [isEditing, setIsEditing] = useState(false);
   const [customSender, setCustomSender] = useState('Con cariño y admiración');
   const [customMessage, setCustomMessage] = useState(
-    'Que este 21 de septiembre llene tu vida de luz dorada, calidez y la alegre promesa de una hermosa primavera. Las flores amarillas son el reflejo de la alegría y la energía positiva que transmites a quienes te rodean.'
+    'Sé que es una boludez pero no me aguanté las ganas, te lo hice con mucho cariño porque sos una persona especial para mí.'
   );
 
   const toggleOpen = () => {

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import {
-  Download,
   Maximize2,
   Copy,
   Check,
@@ -45,7 +44,7 @@ const CARDS: FloralCard[] = [
 ];
 
 const GREETING_TEXT =
-  '¡Feliz 21 de septiembre, Luzmila! Un detalle amarillo para iluminar tu día.';
+  'Sé que es una boludez pero no me aguanté las ganas, te lo hice con mucho cariño porque sos una persona especial para mí';
 
 export default function App() {
   const [selectedCardId, setSelectedCardId] = useState<string>('classic-4-3');
@@ -66,16 +65,6 @@ export default function App() {
     } catch {
       // Fallback
     }
-  };
-
-  const handleDownload = () => {
-    if (soundEnabled) playSpringChime();
-    const link = document.createElement('a');
-    link.href = currentCard.imageUrl;
-    link.download = `Flores_Amarillas_Luzmila_${selectedCardId}.jpg`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   const handleShare = async () => {
@@ -172,8 +161,8 @@ export default function App() {
           <h2 className="font-serif-display text-2xl sm:text-3xl md:text-4xl text-stone-900 font-bold tracking-tight">
             Un Ramo de Luz y Primavera
           </h2>
-          <p className="font-calligraphy text-2xl sm:text-3xl text-amber-700 mt-1 max-w-2xl mx-auto">
-            "Un detalle amarillo para iluminar tu día"
+          <p className="font-calligraphy text-xl sm:text-2xl md:text-3xl text-amber-700 mt-2 max-w-2xl mx-auto px-4 leading-relaxed">
+            "Sé que es una boludez pero no me aguanté las ganas, te lo hice con mucho cariño porque sos una persona especial para mí"
           </p>
         </div>
 
@@ -231,14 +220,6 @@ export default function App() {
                   <Maximize2 className="w-3.5 h-3.5" />
                   Ver en detalle
                 </button>
-                <button
-                  id="preview-download-btn"
-                  onClick={handleDownload}
-                  className="px-4 py-2 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-xs font-semibold shadow-lg flex items-center gap-1.5 transition-transform hover:scale-105 cursor-pointer"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  Descargar HD
-                </button>
               </div>
 
               {/* Corner Watermark Tag */}
@@ -254,29 +235,20 @@ export default function App() {
                 <p className="font-calligraphy text-2xl sm:text-3xl text-amber-800 leading-tight">
                   "¡Feliz 21 de septiembre, Luzmila!"
                 </p>
-                <p className="text-sm font-serif-display italic text-stone-600 mt-1">
-                  Un detalle amarillo para iluminar tu día.
+                <p className="text-sm sm:text-base font-serif-display italic text-stone-700 mt-2 max-w-xl mx-auto leading-relaxed">
+                  "Sé que es una boludez pero no me aguanté las ganas, te lo hice con mucho cariño porque sos una persona especial para mí"
                 </p>
               </div>
 
               {/* Action Toolbar */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-stone-100">
-                <button
-                  id="download-artwork-btn"
-                  onClick={handleDownload}
-                  className="px-3 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
-                >
-                  <Download className="w-4 h-4" />
-                  <span>Descargar</span>
-                </button>
-
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 border-t border-stone-100">
                 <button
                   id="view-fullscreen-btn"
                   onClick={() => setIsLightboxOpen(true)}
-                  className="px-3 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-medium text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer border border-stone-200/80"
+                  className="px-3 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-xs cursor-pointer"
                 >
-                  <Maximize2 className="w-4 h-4 text-stone-600" />
-                  <span>Ver Detalle</span>
+                  <Maximize2 className="w-4 h-4" />
+                  <span>Ver Detalle en Pantalla Completa</span>
                 </button>
 
                 <button
@@ -327,7 +299,6 @@ export default function App() {
         onClose={() => setIsLightboxOpen(false)}
         imageUrl={currentCard.imageUrl}
         title={currentCard.title}
-        onDownload={handleDownload}
       />
     </div>
   );
